@@ -5,6 +5,11 @@ function applyTheme(mainBgColor, textColor, buttonBgColor, buttonTextColor) {
   var anchors = document.querySelectorAll("a");
   var buttons = document.querySelectorAll("button");
   var cards = document.querySelectorAll(".card");
+  var bgColorA = document.querySelectorAll(".bg-color-a");
+  var bgColorB = document.querySelectorAll(".bg-color-b");
+  var colorA = document.querySelectorAll(".color-a");
+  var colorB = document.querySelectorAll(".color-b");
+
 
   anchors.forEach(function (anchor) {
     anchor.style.color = textColor;
@@ -18,6 +23,27 @@ function applyTheme(mainBgColor, textColor, buttonBgColor, buttonTextColor) {
   cards.forEach(function (card) {
     card.style.backgroundColor = buttonBgColor;
   });
+
+  bgColorA.forEach(function (bgColorA) {
+    bgColorA.style.backgroundColor = mainBgColor;
+  });
+ 
+  colorA.forEach(function (colorA) {
+    colorA.style.color = mainBgColor;
+  });
+
+  bgColorB.forEach(function (bgColorB) {
+    bgColorB.style.backgroundColor = textColor;
+  });
+
+  colorB.forEach(function (colorB) {
+    colorB.style.color = textColor;
+  });
+
+   
+
+
+  
 }
 
 // Theme 1
