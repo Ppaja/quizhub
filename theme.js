@@ -9,6 +9,7 @@ function applyTheme(mainBgColor, textColor, buttonBgColor, buttonTextColor) {
   var bgColorB = document.querySelectorAll(".bg-color-b");
   var colorA = document.querySelectorAll(".color-a");
   var colorB = document.querySelectorAll(".color-b");
+  var borderBox = document.querySelectorAll(".border-box");
 
 
   anchors.forEach(function (anchor) {
@@ -27,7 +28,7 @@ function applyTheme(mainBgColor, textColor, buttonBgColor, buttonTextColor) {
   bgColorA.forEach(function (bgColorA) {
     bgColorA.style.backgroundColor = mainBgColor;
   });
- 
+
   colorA.forEach(function (colorA) {
     colorA.style.color = mainBgColor;
   });
@@ -40,10 +41,10 @@ function applyTheme(mainBgColor, textColor, buttonBgColor, buttonTextColor) {
     colorB.style.color = textColor;
   });
 
-   
+  borderBox.forEach(function (box) {
+    box.style.border = `1px solid ${textColor}`;
+  });
 
-
-  
 }
 
 // Theme 1
