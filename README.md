@@ -14,13 +14,9 @@ Welcome to the QuizHub team! Here, you will find all the information you need to
 
 Before diving into the project, it's helpful to have the following tools and resources:
 
-- [Git Documentation on W3Schools](https://www.w3schools.com/git/): A valuable resource for learning Git, a version control system. Not really important for this project if you use GitHub Desktop, but still good to know. 
-
 - [GitHub Desktop](https://desktop.github.com/): GitHub Desktop provides a user-friendly interface for working with Git and GitHub repositories.
 
 - [Visual Studio Code](https://code.visualstudio.com/): Visual Studio Code (VS Code) is a popular code editor with numerous extensions that can enhance your development experience.
-
-- [Git Downloads](https://git-scm.com/downloads): Download Git for your operating system to use Git commands from the command line.
 
 ## Installation
 
