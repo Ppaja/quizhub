@@ -1,77 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuizHub</title>
-    <link rel="stylesheet" href="style.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Reem+Kufi:wght@400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizHub</title>
+  <link rel="stylesheet" href="style.css" />
 
-    <style>
-          /* MAIN */
-          main {
-            display: flex;
-            flex-direction: column;
-          }
-          #popular {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
-            grid-gap: 10px; /
-          }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Reem+Kufi:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
 
-          @media (max-width: 600px) {
-            #popular {
-              display: grid;
-              grid-template-columns: 1fr;
-              grid-template-rows: 1fr;
-              grid-column-gap: 10px;
-              grid-row-gap: 10px;
-            }
-          }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>QuizHub</h1>
-      <a id="nav-toggle" class="nav-toggle">☰</a>
+  <style>
+    /* MAIN */
+    main {
+      display: flex;
+      flex-direction: column;
+    }
 
-      <!-- Nav PC -->
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="about.html">About</a>
-        <a href="settings.html">Settings</a>
-      </nav>
+    #popular {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* Three columns with equal width */
+      grid-gap: 10px;/
+    }
 
-      <!-- Nav Mobile -->
-      <nav id="mobile-nav" class="mobile-nav">
-        <a href="index.html">Home</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="about.html">About</a>
-        <a href="settings.html">Settings</a>
-      </nav>
-    </header>
+    .header {
+      font-size: 30px;
+      font-weight: bold;
 
-    <main>
-      <div id="popular-container">
-        <h2>Popular</h2>
-        <div id="popular">
-          <div class="card" id="section-1"></div>
-          <div class="card" id="section-2"></div>
-          <div class="card" id="section-3"></div>
-          <div class="card" id="section-4"></div>
+    }
+
+
+
+    #section-1 {
+      background-image: url("img/capital.jpg");
+      background-size: cover;
+      background-position: top 15% center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    #section-1 p {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    #section-1 button {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      opacity: 0.9;
+    }
+
+
+
+    @media (max-width: 600px) {
+      #popular {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>QuizHub</h1>
+    <a id="nav-toggle" class="nav-toggle">☰</a>
+
+    <!-- Nav PC -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="about.html">About</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+
+    <!-- Nav Mobile -->
+    <nav id="mobile-nav" class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="about.html">About</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="popular-container">
+      <h2>Popular</h2>
+      <div id="popular">
+        <div class="card" id="section-1">
+          <p class="header color-a">capital quiz</p>
+
+          <button id="capitals" class="bg-color-a color-b bigbutton">
+            Start Quiz
+          </button>
         </div>
+        <div class="card" id="section-2"></div>
+        <div class="card" id="section-3"></div>
+        <div class="card" id="section-4"></div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script src="index.js"></script>
-    <script src="theme.js"></script>
-    <script>
-      // This is a test change
-    </script>
-  </body>
+  <script src="index.js"></script>
+  <script src="theme.js"></script>
+  <script>
+    // link to quizzes
+    const capitals = document.getElementById("capitals");
+    capitals.addEventListener("click", () => {
+      window.location.href = "quizzes/capitals/start.html";
+    });
+  </script>
+</body>
+
 </html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>capital quiz QuizHub</title>
+    <link rel="stylesheet" href="../../style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Reem+Kufi:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .answer-button {
+        width: 90%;
+        height: 100px;
+        font-family: "Reem Kufi", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px;
+      }
+
+      #question-container {
+        text-align: center;
+        width: 100vw;
+      }
+
+      #start-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #end-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      #end-container p {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      #end-container h3 {
+        font-size: 60px;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.19);
+      }
+
+      .rightgreen {
+        background-color: #00ff00;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>QuizHub</h1>
+      <a id="nav-toggle" class="nav-toggle">☰</a>
+
+      <!-- Nav PC -->
+      <nav class="nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../quiz.html">Quiz</a>
+        <a href="../../about.html">About</a>
+        <a href="../../settings.html">Settings</a>
+      </nav>
+
+      <!-- Nav Mobile -->
+      <nav id="mobile-nav" class="mobile-nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../quiz.html">Quiz</a>
+        <a href="../../about.html">About</a>
+        <a href="../../settings.html">Settings</a>
+      </nav>
+    </header>
+
+    <main>
+      <div id="start-container" class="card">
+        <h1 class="color-a">capital quiz</h1>
+        <button id="start-button" class="bg-color-a color-b bigbutton">
+          Start
+        </button>
+      </div>
+
+      <div id="question-container" class="card" style="display: none">
+        <h2 id="question-title" class="color-a">
+          Question <span id="question-number"></span>
+        </h2>
+        <h3 id="question-text" class="color-a">What is the question?</h3>
+        <div>
+          <button class="answer-button bg-color-a color-b" id="answer-1">
+            answer 1
+          </button>
+          <button class="answer-button bg-color-a color-b" id="answer-2">
+            answer 2
+          </button>
+          <button class="answer-button bg-color-a color-b" id="answer-3">
+            answer 3
+          </button>
+          <button class="answer-button bg-color-a color-b" id="answer-4">
+            answer 4
+          </button>
+        </div>
+      </div>
+
+      <div id="end-container" class="card" style="display: none">
+        <h3 id="end-header" class="color-a">result:</h3>
+        <p class="color-b bg-color-a">
+          Score: <span id="number" style="color: red"></span>/10 points
+        </p>
+        <p class="color-a" id="end-text"></p>
+      </div>
+    </main>
+
+    <script src="../../index.js"></script>
+    <script src="../../theme.js"></script>
+    <script>
+      const number = document.getElementById("number");
+      // variables
+      // Buttons
+      const answer1 = document.getElementById("answer-1");
+      const answer2 = document.getElementById("answer-2");
+      const answer3 = document.getElementById("answer-3");
+      const answer4 = document.getElementById("answer-4");
+      const startButton = document.getElementById("start-button");
+
+      // containers
+      const question1 = document.getElementById("question-container");
+      const startContainer = document.getElementById("start-container");
+      const endContainer = document.getElementById("end-container");
+
+      // text
+      const questionTitle = document.getElementById("question-title");
+      const questionText = document.getElementById("question-text");
+      const questionNumber = document.getElementById("question-number");
+      const endText = document.getElementById("end-text");
+      const endHeader = document.getElementById("end-header");
+
+      let progress = 0;
+      let score = 0;
+      const rightAnswers = [
+        "Paris",
+        "Canberra",
+        "Tokyo",
+        "Brasilia",
+        "Ottawa",
+        "Moscow",
+        "Pretoria",
+        "Buenos Aires",
+        "Madrid",
+        "New Delhi",
+      ];
+
+      // question 1
+      const question1Text = "What is the capital of France?";
+      const question1Answers = ["Madrid", "Paris", "Berlin", "Lyon"];
+
+      // question 2
+      const question2Text = "Which city serves as the capital of Australia?";
+      const question2Answers = ["Canberra", "Sydney", "Melbourne", "Brisbane"];
+
+      // question 3
+      const question3Text = "What is the capital of Japan?";
+      const question3Answers = ["Tokyo", "Seoul", "Beijing", "Bangkok"];
+
+      // question 4
+      const question4Text = "Which city is the capital of Brazil?";
+      const question4Answers = [
+        "Buenos Aires",
+        "Rio de Janeiro",
+        "Sao Paulo",
+        "Brasilia",
+      ];
+
+      // question 5
+      const question5Text = "What is the capital of Canada?";
+      const question5Answers = ["Edmonton", "Montreal", "Vancouver", "Ottawa"];
+
+      // question 6
+      const question6Text = "Which city is the capital of Russia?";
+      const question6Answers = ["Moscow", "St. Petersburg", "Kiev", "Minsk"];
+
+      // question 7
+      const question7Text = "What is the capital of South Africa?";
+      const question7Answers = [
+        "Nairobi",
+        "Pretoria",
+        "Johannesburg",
+        "Cape Town",
+      ];
+
+      // question 8
+      const question8Text = "Which city serves as the capital of Argentina?";
+      const question8Answers = [
+        "Santiago",
+        "Montevideo",
+        "Buenos Aires",
+        "Istanbul",
+      ];
+
+      // question 9
+      const question9Text = "What is the capital of Spain?";
+      const question9Answers = ["Barcelona", "Seville", "Madrid", "Valencia"];
+
+      // question 10
+      const question10Text = "Which city is the capital of India?";
+      const question10Answers = ["Mumbai", "New Delhi", "Kolkata", "Chennai"];
+
+      startButton.addEventListener("click", function () {
+        startContainer.style.display = "none";
+        question1.style.display = "block";
+        questionNumber.innerHTML = 1;
+        questionText.innerHTML = question1Text;
+        answer1.innerHTML = question1Answers[0];
+        answer2.innerHTML = question1Answers[1];
+        answer3.innerHTML = question1Answers[2];
+        answer4.innerHTML = question1Answers[3];
+        progress++;
+      });
+
+      function nextQuestion() {
+        setTimeout(function () {
+          loadTheme();
+          if (progress === 1) {
+            questionNumber.innerHTML = 2;
+            questionText.innerHTML = question2Text;
+            answer1.innerHTML = question2Answers[0];
+            answer2.innerHTML = question2Answers[1];
+            answer3.innerHTML = question2Answers[2];
+            answer4.innerHTML = question2Answers[3];
+            progress++;
+          } else if (progress === 2) {
+            questionNumber.innerHTML = 3;
+            questionText.innerHTML = question3Text;
+            answer1.innerHTML = question3Answers[0];
+            answer2.innerHTML = question3Answers[1];
+            answer3.innerHTML = question3Answers[2];
+            answer4.innerHTML = question3Answers[3];
+            progress++;
+          } else if (progress === 3) {
+            questionNumber.innerHTML = 4;
+            questionText.innerHTML = question4Text;
+            answer1.innerHTML = question4Answers[0];
+            answer2.innerHTML = question4Answers[1];
+            answer3.innerHTML = question4Answers[2];
+            answer4.innerHTML = question4Answers[3];
+            progress++;
+          } else if (progress === 4) {
+            questionNumber.innerHTML = 5;
+            questionText.innerHTML = question5Text;
+            answer1.innerHTML = question5Answers[0];
+            answer2.innerHTML = question5Answers[1];
+            answer3.innerHTML = question5Answers[2];
+            answer4.innerHTML = question5Answers[3];
+            progress++;
+          } else if (progress === 5) {
+            questionNumber.innerHTML = 6;
+            questionText.innerHTML = question6Text;
+            answer1.innerHTML = question6Answers[0];
+            answer2.innerHTML = question6Answers[1];
+            answer3.innerHTML = question6Answers[2];
+            answer4.innerHTML = question6Answers[3];
+            progress++;
+          } else if (progress === 6) {
+            questionNumber.innerHTML = 7;
+            questionText.innerHTML = question7Text;
+            answer1.innerHTML = question7Answers[0];
+            answer2.innerHTML = question7Answers[1];
+            answer3.innerHTML = question7Answers[2];
+            answer4.innerHTML = question7Answers[3];
+            progress++;
+          } else if (progress === 7) {
+            questionNumber.innerHTML = 8;
+            questionText.innerHTML = question8Text;
+            answer1.innerHTML = question8Answers[0];
+            answer2.innerHTML = question8Answers[1];
+            answer3.innerHTML = question8Answers[2];
+            answer4.innerHTML = question8Answers[3];
+            progress++;
+          } else if (progress === 8) {
+            questionNumber.innerHTML = 9;
+            questionText.innerHTML = question9Text;
+            answer1.innerHTML = question9Answers[0];
+            answer2.innerHTML = question9Answers[1];
+            answer3.innerHTML = question9Answers[2];
+            answer4.innerHTML = question9Answers[3];
+            progress++;
+          } else if (progress === 9) {
+            questionNumber.innerHTML = 10;
+            questionText.innerHTML = question10Text;
+            answer1.innerHTML = question10Answers[0];
+            answer2.innerHTML = question10Answers[1];
+            answer3.innerHTML = question10Answers[2];
+            answer4.innerHTML = question10Answers[3];
+            progress++;
+          } else if (progress === 10) {
+            question1.style.display = "none";
+            endContainer.style.display = "block";
+            endHeader.style.display = "block";
+            endTextGenerator(score);
+          }
+          updatescore();
+        }, 1000);
+      }
+
+      function endTextGenerator(score) {
+        if (score === 10) {
+          endText.innerHTML = "Wow, you got everything right! Great job!";
+        } else if (score < 10 && score > 6) {
+          endText.innerHTML = "Good job!";
+        } else if (score < 6 && score > 3) {
+          endText.innerHTML = "Not bad, but you can do better!";
+        } else {
+          endText.innerHTML = "You can do better!";
+        }
+      }
+
+      function updatescore() {
+        number.innerHTML = score;
+      }
+
+      // Event-Listener für answer1
+      answer1.addEventListener("click", function () {
+        loadTheme();
+        if (answer1.innerHTML === rightAnswers[progress - 1]) {
+          this.style.backgroundColor = "green";
+          this.style.color = "black";
+          score++;
+          nextQuestion();
+        } else {
+          this.style.backgroundColor = "red";
+          this.style.color = "black";
+          nextQuestion();
+        }
+      });
+
+      // Event-Listener für answer2
+      answer2.addEventListener("click", function () {
+        if (answer2.innerHTML === rightAnswers[progress - 1]) {
+          this.style.backgroundColor = "green";
+          this.style.color = "black";
+          score++;
+          nextQuestion();
+        } else {
+          this.style.backgroundColor = "red";
+          this.style.color = "black";
+          nextQuestion();
+        }
+      });
+
+      // Event-Listener für answer3
+      answer3.addEventListener("click", function () {
+        if (answer3.innerHTML === rightAnswers[progress - 1]) {
+          this.style.backgroundColor = "green";
+          this.style.color = "black";
+          score++;
+          nextQuestion();
+        } else {
+          this.style.backgroundColor = "red";
+          this.style.color = "black";
+          nextQuestion();
+        }
+      });
+
+      // Event-Listener für answer4
+      answer4.addEventListener("click", function () {
+        if (answer4.innerHTML === rightAnswers[progress - 1]) {
+          this.style.backgroundColor = "green";
+          this.style.color = "black";
+          score++;
+          nextQuestion();
+        } else {
+          this.style.backgroundColor = "red";
+          this.style.color = "black";
+          nextQuestion();
+        }
+      });
+    </script>
+  </body>
+</html>
