@@ -1,0 +1,399 @@
+<!-- THIS IS THE TUTORIAL -->
+<!-- I will show you whats important for this project -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizHub</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Reem+Kufi:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .example {
+        background-color: white;
+        color: black;
+        padding: 5px;
+      }
+
+      .spoiler-content {
+        display: none; 
+      }
+
+      .spoiler-toggle {
+        cursor: pointer;
+      }
+
+      #content-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: auto;
+        height: auto;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      form input {
+        width: 200px;
+        height: 30px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+        border: solid 1px black;
+        font-size: 20px;
+        font-family: "Reem Kufi", sans-serif;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 90vw;
+      }
+
+      .ex2 {
+        width: 70%;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+      }
+      .ex2 p {
+        font-size: 15px;
+      }
+      main {
+        overflow-x: hidden;
+        padding: 10px;
+      }
+
+      p {
+        font-size: 20px;
+        font-family: "Reem Kufi", sans-serif;
+        margin-right: 10px;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16/9;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>QuizHub</h1>
+      <a id="nav-toggle" class="nav-toggle">☰</a>
+
+      <!-- Nav PC -->
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+
+      <!-- Nav Mobile -->
+      <nav id="mobile-nav" class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </header>
+
+    <main>
+      <div id="content-nav">
+        <a href="#getting-started">Getting Started</a>
+        <a href="#theme">Theme</a>
+        <a href="#current-features">Features</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <h1 class="color-a bg-color-b">Welcome to QuizHub Dev Team</h1>
+      <a href="https://github.com/Ppaja/quizhub">
+        <img
+          src="https://img.shields.io/badge/GitHub-QuizHub-blueviolet?style=for-the-badge"
+          alt="GitHub Badge"
+        />
+      </a>
+
+      <h2>I will teach you everything you need to know</h2>
+      <div id="getting-started">
+        <h3 class="color-a bg-color-b">Getting Started</h3>
+        <h4 class="underline">1. Before we start</h4>
+        <p>First, please tell me your GitHub Username, so I can add you to the GitHub project</p>
+        <form name="contact" netlify>
+          <input type="text" placeholder="GitHub Username" class="bg-color-a"/>
+          <button type="submit" class="bigbutton">Submit</button>
+        </form>
+        <h4 class="underline">2. Setup</h4>
+        <p>after I added you to the GitHub project you can setup the project</p>
+        <p>download the following programs:</p>
+        <ul>
+          <li>
+            <i class="fab fa-github"></i> <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a>
+          </li>
+          <li>
+            <i class="fas fa-code"></i> <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
+          </li>
+        </ul>
+        <h4 class="underline">3. Download the project</h4>
+        <p>Now that you have all the programs, you can download the project with  <i class="fab fa-github"></i>GitHub Desktop</p>
+        <p>open GitHub Desktop and click "clone repository from the internet" and click the "URL" tab. </p>
+        <img src="tutorial/1.jpg" alt="step 1">
+        <p>navigate to the URL tab and paste the URL of the project</p>
+        <div class="example ex2">
+          <p>https://github.com/Ppaja/quizhub</p>
+        </div><br>
+        <img src="tutorial/2.jpg" alt="step 2">
+        <h4 class="underline">4. set up your branch</h4>
+        <p>after you cloned the project create your own branch</p>
+        <p>click on the "Branches" tab and "New branch" and name it for example like your username</p>
+        <p>a branch is a copy of the project that is separate from the main branch. Whatever you add or do will not affect the main branch until you manually merge it</p>
+        <img src="tutorial/3.jpg" alt="step 3">
+        <img src="tutorial/4.jpg" alt="step 4">
+        <p>after you created your own branch click the "Push" button</p>
+        <img src="tutorial/5.jpg" alt="step 5">
+        <h4 class="underline">5. start coding</h4>
+        <p>now you can click "open with VS Code" and start coding</p>
+        <img src="tutorial/6.jpg" alt="step 6">
+
+        <p style="color: red;">I would recommend you read the rest of this tutorial to get a better understanding of the project and how the code works</p>
+        <a style="background-color: green;" href="#theme">click here to view how the code works, whats good to know etc.</a>
+        <hr>
+        <h4 class="underline">6. commit changes and push to your branch</h4>
+        <p>after you added, changed or deleted something and come back to GitHub Desktop you can see the changes you made</p>
+        <img src="tutorial/7.jpg" alt="step 7">
+        <p>for each file type a small description of what you did and click "commit to branch"</p>
+        <img src="tutorial/8.jpg" alt="step 8">
+        <p>do this for all files. </p>
+        <p>then click "Push origin"</p>
+        <img src="tutorial/9.jpg" alt="step 9">
+        <p>now your changes are pushed to your GitHub branch</p>
+        <p>but not into the main code/branch, just into your branch</p>
+        <h4 class="underline">7. create pull request</h4>
+        <p>To submit your changes to the main code/branch, click "preview Pull request"</p>
+        <img src="tutorial/10.jpg" alt="step 10">
+        <p>you get a overview of all the changes you made</p>
+        <img src="tutorial/11.jpg" alt="step 11">
+        <p>click "create pull request"</p>
+        <img src="tutorial/12.jpg" alt="step 12">
+        <p>now a browser opens and you have to descripe a general description of all your changes and press the final "create pull request" button</p>
+
+        <h1>And thats it! You now have to wait until another author approves your changes and merge your pull request into the main code/branch</h1>
+
+        <iframe src="https://www.youtube.com/embed/UAr0r7xGXOE?si=mBO5OL7FMjPXr2bu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      </div>
+      <div id="theme">
+        <h3 class="color-a bg-color-b">Theme</h3>
+        <p>
+          Because the project has a theme function most things are already styled to match the theme. But maybe sometimes you want to change the colors. You can add your own or if you want to stick with the theme you can use classes:
+        </p>
+        <div id="theme-selectio">
+          <h2>Change the theme to see what each class does</h2>
+          <button id="theme1Button">themeA</button>
+          <button id="theme3Button">themeB</button>
+        </div>
+        <br />
+        <p>These classes are currently available</p>
+        <ul>
+          <li>color-a</li>
+          <p>this class sets the text color to theme color a</p>
+          <div class="example">
+            <p class="color-a">color-a</p>
+          </div>
+          <li>color-b</li>
+          <p>this class sets the text color to theme color b</p>
+          <div class="example">
+            <p class="color-b">color-b</p>
+          </div>
+          <li>bg-color-a</li>
+          <p>this class sets the background color to theme color a</p>
+          <div class="example">
+            <p class="bg-color-a">bg-color-a</p>
+          </div>
+          <li>bg-color-b</li>
+          <p>this class sets the background color to theme color b</p>
+          <div class="example">
+            <p class="bg-color-b">bg-color-b</p>
+          </div>
+          <li>card</li>
+          <p>this class creates this card:</p>
+          <div class="example">
+            <div class="card"></div>
+          </div>
+        </ul>
+      </div>
+      <div id="current-features">
+        <h3 class="color-a bg-color-b">Current Features</h3>
+        <p>These features are currently available</p>
+        <ol>
+          <li>theme selection</li>
+          <li>##</li>
+          <li>##</li>
+        </ol>
+      </div>
+      <div id="faq">
+        <h3 class="color-a bg-color-b">FAQ</h3>
+        <hr />
+
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">What is QuizHub?</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            QuizHub is a web-based project that focuses on creating an
+            interactive platform for hosting and playing quizzes.
+          </p>
+          <p class="spoiler-content color-a bg-color-b">
+            Its mostly about learning how to use GitHub and code a project
+          </p>
+        </div>
+
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">What can I do?</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            You can add/modify/delete whatever you want. There is no right or wrong, do what you think would be cool :)
+          </p>
+          <p class="spoiler-content color-a bg-color-b">
+            Its mostly about learning how to use GitHub and code a project
+          </p>
+        </div>
+
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">Examples of what you can do?</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            How about creating a own quiz about something? Create a new file, for example "history.html", use the template code to create your own quiz.
+          </p>
+          <p class="spoiler-content color-a bg-color-b">
+            After you done you can link it to main page or somebody else can do it
+          </p>
+        </div>
+
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">What if I mess up?</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            No worries, its all about learning how to use GitHub and code a project. You cant do anything wrong. The main branch is protected, so you cant accidentally mess up!
+          </p>
+        </div>
+
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">lorem?</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quo quod quia dolorum quisquam neque. Minima a repudiandae delectus deleniti?
+          </p>
+          <p class="spoiler-content color-a bg-color-b">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, soluta?
+          </p>
+        </div>
+      </div>
+      <div id="files">
+        <h3 class="color-a bg-color-b">Files</h3>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">index.html</h4>
+          <p class="spoiler-content color-a bg-color-b">index.html is the starting page.</p>
+          <p class="spoiler-content color-a bg-color-b">here are some example quizzes linked</p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">about.html</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            about.html contains information about the project
+          </p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">quiz.html</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            here should be all quizzes linked. Maybe sorted by category. 
+          </p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">settings.html</h4>
+          <p class="spoiler-content color-a bg-color-b">
+            here you can change the theme and maybe more settings for the future
+          </p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">template.html</h4>
+          <p class="spoiler-content color-a bg-color-b color-a bg-color-b">
+            a template page for other pages. You can copy this code as base for a quiz page for example
+          </p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">theme.js</h4>
+          <p class="spoiler-content color-a bg-color-b color-a bg-color-b">
+            this is the JS file that sets the theme colors and creates the classes for theme colors.
+          </p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">readme.md</h4>
+          <p class="spoiler-content color-a bg-color-b color-a bg-color-b">
+            this file is the readme file for the GitHub page
+          </p>
+        </div>
+        <div class="spoiler">
+          <h4 class="spoiler-toggle">style.css</h4>
+          <p class="spoiler-content color-a bg-color-b color-a bg-color-b">
+            here are the main styles (global styles that apply to all pages)
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+    <script src="theme.js"></script>
+    <script>
+      $(".spoiler-toggle").click(function () {
+        $(this).parent().find(".spoiler-content").slideToggle();
+      });
+
+      const theme1Button = document.getElementById("theme1Button");
+      const theme3Button = document.getElementById("theme3Button");
+
+      theme1Button.addEventListener("click", () => {
+        theme1();
+        localStorage.setItem("theme", "theme1");
+        localStorage.removeItem("theme2");
+        localStorage.removeItem("theme3");
+      });
+
+
+      theme3Button.addEventListener("click", () => {
+        theme3();
+        localStorage.setItem("theme", "theme3");
+        localStorage.removeItem("theme1");
+        localStorage.removeItem("theme2");
+      });
+    </script>
+  </body>
+</html>

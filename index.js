@@ -12,4 +12,10 @@ navToggle.addEventListener("click", function () {
         mobileNav.style.visibility = "visible";
         isMobileNavVisible = true;
     }
+    window.scrollTo({
+        top: 0, 
+        behavior: "smooth"
+    });
 });
+
+
