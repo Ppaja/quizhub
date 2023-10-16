@@ -154,8 +154,8 @@
         <h3 class="color-a bg-color-b">Getting Started</h3>
         <h4 class="underline">1. Before we start</h4>
         <p>First, please tell me your GitHub Username, so I can add you to the GitHub project</p>
-        <form name="contact" netlify>
-          <input type="text" placeholder="GitHub Username" class="bg-color-a"/>
+        <form name="contact" method="POST" netlify>
+          <input name="username" type="text" placeholder="GitHub Username" class="bg-color-a"/>
           <button type="submit" class="bigbutton">Submit</button>
         </form>
         <h4 class="underline">2. Setup</h4>
