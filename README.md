@@ -5,6 +5,8 @@
 
 Welcome to the QuizHub team! Here, you will find all the information you need to contribute effectively to the project.
 
+[Link Tutorial](https://quizhublearn.netlify.app/tutorial)
+
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Installation](#Installation)
